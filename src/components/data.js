@@ -8,15 +8,15 @@ export const clinics = [
 function timings(start, end) {
   let timings = [];
   for (let i = start; i < end; i++) {
-    for (let j = 0; j < 2; j++) {
+    for (let j = 0; j < 3; j++) {
       j === 0 && timings.push(`${i}.00 - ${i}.20`);
       j === 1 && timings.push(`${i}.20 - ${i}.40`);
-      j === 0 && timings.push(`${i}.40 - ${i + 1}.00`);
+      j === 2 && timings.push(`${i}.40 - ${i + 1}.00`);
     }
   }
   return timings;
 }
-console.log("data", timings(9, 15));
+
 export const doctors = [
   {
     name: "Sundaram",
@@ -37,7 +37,7 @@ export const doctors = [
     cost: "$40",
     hospital: "Apollo DRDO Hospitals",
     speciality: ["teeth", "Lungs", "Stomach"],
-    timings: timings(9, 14),
+    timings: timings(9, 10),
   },
   {
     name: "Rajesh",

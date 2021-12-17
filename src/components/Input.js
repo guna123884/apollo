@@ -16,7 +16,12 @@ const Input = (props) => {
             props.chageData(e.target.value);
           }}
         >
-          <option>Select {props.select}</option>
+          {props.name === "timings" && props.data.length === 0 ? (
+            <option>No appointments</option>
+          ) : (
+            <option>Select {props.select}</option>
+          )}
+
           {props.data?.map((item, i) => (
             <option key={i} value={item}>
               {item}
